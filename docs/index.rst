@@ -1,6 +1,6 @@
-*********
-Paperless
-*********
+*************
+Paperless-ngx
+*************
 
 Paperless is a simple Django application running in two parts:
 a *Consumer* (the thing that does the indexing) and
