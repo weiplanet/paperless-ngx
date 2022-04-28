@@ -254,8 +254,14 @@ jobs:
         with:
           images: ghcr.io/${{ github.repository }}
           tags: |
+            # Tag branches with branch name
             type=ref,event=branch
+            # Tag tags with tag name
             type=ref,event=tag
+            # Process semver tags
+            # For a tag x.y.z or vX.Y.Z, output an x.y.z and x.y image tag
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
       -
         name: Checkout
         uses: actions/checkout@v3
